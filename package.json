@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Hamjeth68.github.io/Portfolio-SE-React-Native",
+  "homepage": "http://Hamjeth68.github.io/Portfolio-SE-React-Native/homepage",
   "dependencies": {
     "@react-pdf/renderer": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -11,6 +11,7 @@
     "aws-amplify": "^6.0.9",
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
+    "firebase": "^10.7.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.1",
     "react-dom": "^17.0.2",
