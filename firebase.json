@@ -1,16 +1,10 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "Portfolio-SE-React-Native/public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }
