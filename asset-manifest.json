@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portfolio-SE-React-Native/static/css/main.a729f61c.css",
+    "main.css": "/Portfolio-SE-React-Native/static/css/main.c5d6d601.css",
     "main.js": "/Portfolio-SE-React-Native/static/js/main.72a24f6f.js",
     "static/js/415.4d6acbeb.chunk.js": "/Portfolio-SE-React-Native/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/Portfolio-SE-React-Native/static/js/787.1ed0c42c.chunk.js",
@@ -17,13 +17,13 @@
     "static/media/avatar.svg": "/Portfolio-SE-React-Native/static/media/avatar.5852f40fbb38aa284829fa3fb7722225.svg",
     "static/media/pre.svg": "/Portfolio-SE-React-Native/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/Portfolio-SE-React-Native/index.html",
-    "main.a729f61c.css.map": "/Portfolio-SE-React-Native/static/css/main.a729f61c.css.map",
+    "main.c5d6d601.css.map": "/Portfolio-SE-React-Native/static/css/main.c5d6d601.css.map",
     "main.72a24f6f.js.map": "/Portfolio-SE-React-Native/static/js/main.72a24f6f.js.map",
     "415.4d6acbeb.chunk.js.map": "/Portfolio-SE-React-Native/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/Portfolio-SE-React-Native/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a729f61c.css",
+    "static/css/main.c5d6d601.css",
     "static/js/main.72a24f6f.js"
   ]
 }
