@@ -31,3 +31,4 @@ Server/config.js
 # amplify
 .amplify
 amplifyconfiguration*
+.vercel
