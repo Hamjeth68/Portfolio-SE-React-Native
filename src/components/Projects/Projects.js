@@ -1,3 +1,8 @@
+
+
+
+
+
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
@@ -27,7 +32,7 @@ function Projects() {
               isBlog={false}
               title="Ferry-Pay"
               description="The Ferry Mobile App is the easiest way to manage your money, earn rewards and track your spending, for Ferry Payroll Card account holders. The app is free to download and puts you in control with 24/7 access to your account and card management."
-              demoLink="https://play.google.com/store/apps/details?id=com.ferrywalletnative/"
+              demoLink="https://play.google.com/store/apps/details?id=com.ferrywalletnative"
             />
           </Col>
 
@@ -53,9 +58,25 @@ function Projects() {
           </Col>
 
 
-       
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={editor}
+              isBlog={false}
+              title="Namasthe India"
+              description="Another noteworthy project I led was the development of Namasthe India, an innovative e-commerce platform specifically tailored for restaurant management. The project involved a seamless integration of front-end and back-end systems, which greatly optimized performance and scalability. Key implementations in the project included the use of Redux for efficient state management and Docker for containerization of the Spring Boot backend, a strategy that significantly enhanced reliability and scalability. The technologies employed in this project spanned across React Native, Android, Objective-C, Spring Boot, MySQL, Crashlytics, AWS, JSX, Redux, Redux-Sagas, Swift, and CI/CD."
+              demoLink="https://play.google.com/store/apps/details?id=com.namastheindia"              
+            />
+          </Col>
 
-     
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={editor}
+              isBlog={false}
+              title="RestaurantX"
+              description="In my role at RestaurantX, I was instrumental in developing an intuitive online food ordering platform that has bridged the gap between restaurant owners and customers. This platform empowered users to conveniently order food, arrange pickups or deliveries, and reserve tables, fostering seamless interactions and transactions."
+              demoLink="https://play.google.com/store/apps/details?id=com.foodlober.codelantic"              
+            />
+          </Col>
         </Row>
       </Container>
     </Container>
@@ -63,3 +84,4 @@ function Projects() {
 }
 
 export default Projects;
+
