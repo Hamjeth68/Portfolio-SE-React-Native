@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import {
+  useState
+} from 'react';
 
 const useEmailJs = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -7,16 +9,14 @@ const useEmailJs = () => {
   const sendEmail = async (formData) => {
     setIsLoading(true);
     setError(null);
-    const obj ={ 
-        service_id: 'service_j3v6wo8',
-        template_id: 'template_yh66j2a',
-        user_id: '7mArU2PI2PH2T6cun'
-    }
 
     try {
-      formData.append('service_id', obj.service_id);
-      formData.append('template_id', obj.template_id);
-      formData.append('user_id', obj.user_id);
+      formData.append('service_id',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID);
+      formData.append('template_id',
+        import.meta.env.VITE_EMAILJS_TEMPLATEN_ID);
+      formData.append('user_id',
+        import.meta.env.VITE_EMAILJS_USER_ID);
 
       const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
         method: 'POST',
@@ -44,7 +44,11 @@ const useEmailJs = () => {
     }
   };
 
-  return { sendEmail, isLoading, error };
+  return {
+    sendEmail,
+    isLoading,
+    error
+  };
 };
 
 export default useEmailJs;
