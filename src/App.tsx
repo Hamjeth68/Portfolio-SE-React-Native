@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import About from "./components/About/About";
 import Footer from "./components/Footer";
 import Home from "./components/Home/Home";
@@ -37,6 +38,7 @@ function App(): JSX.Element {
           </Routes>
         </main>
         <Footer />
+        <SpeedInsights />
       </div>
     </Router>
   );
