@@ -10,17 +10,15 @@ const useEmailJs = () => {
 
     try {
       // Using explicit references so CRA inlines them at build time.
-      // Falls back to the known-working EmailJS credentials so the form keeps
-      // working even when REACT_APP_EMAILJS_* env vars aren't configured on
-      // the deployment platform.
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_j3v6wo8";
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_yh66j2a";
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       // EmailJS renamed "user_id" to "public key"; support both env names.
-      const userId =
-        process.env.REACT_APP_EMAILJS_USER_ID ||
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY ||
-        "7mArU2PI2PH2T6cun";
+      const userId = process.env.REACT_APP_EMAILJS_USER_ID || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
       const privateKey = process.env.REACT_APP_EMAILJS_PRIVATE_KEY;
+
+      if (!serviceId || !templateId || !userId) {
+        throw new Error("EmailJS environment variables are missing.");
+      }
 
       formData.append("service_id", serviceId);
       formData.append("template_id", templateId);
