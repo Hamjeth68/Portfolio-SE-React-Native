@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import { useForm } from "react-hook-form";
 import useEmailJs from "../../Hooks/useEmail";
+import Reveal from "../Reveal";
 
 type ContactFormData = {
   email: string;
@@ -34,18 +35,21 @@ const ContactMe: React.FC = () => {
   return (
     <section id="contact" className="relative py-14 md:py-20">
       <div className="mx-auto max-w-4xl space-y-6 px-4">
-        <div className="space-y-2 text-center">
-          <h2 className="text-3xl font-semibold md:text-4xl">Let’s work together</h2>
+        <Reveal className="space-y-2 text-center">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Let’s work <span className="text-gradient-animate">together</span>
+          </h2>
           <p className="text-slate-300">Drop me a note and I’ll get back to you soon.</p>
-        </div>
+        </Reveal>
 
         {firstError && <p className="text-center text-sm text-rose-300">{firstError}</p>}
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit(onSubmit)}
-          className="card-surface space-y-4 p-6"
-        >
+        <Reveal delayMs={100}>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit(onSubmit)}
+            className="card-surface space-y-4 p-6"
+          >
           <div className="grid gap-4 md:grid-cols-2">
             <label className="flex flex-col gap-2 text-sm font-semibold text-slate-200">
               Name
@@ -86,7 +90,8 @@ const ContactMe: React.FC = () => {
               {isLoading ? "Sending…" : "Send message"}
             </button>
           </div>
-        </form>
+          </form>
+        </Reveal>
       </div>
     </section>
   );

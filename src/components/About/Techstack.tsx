@@ -1,19 +1,57 @@
 import React from "react";
-import { CgCPlusPlus } from "react-icons/cg";
 import { DiGit, DiJavascript1, DiMongodb, DiNodejs, DiPython, DiReact } from "react-icons/di";
-import { SiFirebase, SiNextdotjs, SiPytorch } from "react-icons/si";
+import {
+  SiAmazonaws,
+  SiAngular,
+  SiCplusplus,
+  SiDocker,
+  SiFastapi,
+  SiFirebase,
+  SiGithubactions,
+  SiGooglecloud,
+  SiGraphql,
+  SiKubernetes,
+  SiMicrosoftazure,
+  SiMysql,
+  SiNestjs,
+  SiNextdotjs,
+  SiNginx,
+  SiPostgresql,
+  SiRedis,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { TbDeviceMobile } from "react-icons/tb";
 
 const stackIcons = [
-  { label: "C++", icon: <CgCPlusPlus /> },
+  { label: "TypeScript", icon: <SiTypescript /> },
   { label: "JavaScript", icon: <DiJavascript1 /> },
-  { label: "Node.js", icon: <DiNodejs /> },
   { label: "React", icon: <DiReact /> },
-  { label: "MongoDB", icon: <DiMongodb /> },
+  { label: "React Native", icon: <TbDeviceMobile /> },
   { label: "Next.js", icon: <SiNextdotjs /> },
-  { label: "Git", icon: <DiGit /> },
+  { label: "Angular", icon: <SiAngular /> },
+  { label: "Redux", icon: <SiRedux /> },
+  { label: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { label: "Node.js", icon: <DiNodejs /> },
+  { label: "NestJS", icon: <SiNestjs /> },
+  { label: "FastAPI", icon: <SiFastapi /> },
+  { label: "GraphQL", icon: <SiGraphql /> },
+  { label: "PostgreSQL", icon: <SiPostgresql /> },
+  { label: "MySQL", icon: <SiMysql /> },
+  { label: "MongoDB", icon: <DiMongodb /> },
   { label: "Firebase", icon: <SiFirebase /> },
+  { label: "Redis", icon: <SiRedis /> },
+  { label: "AWS", icon: <SiAmazonaws /> },
+  { label: "GCP", icon: <SiGooglecloud /> },
+  { label: "Azure", icon: <SiMicrosoftazure /> },
+  { label: "Docker", icon: <SiDocker /> },
+  { label: "Kubernetes", icon: <SiKubernetes /> },
+  { label: "NGINX", icon: <SiNginx /> },
+  { label: "Git", icon: <DiGit /> },
+  { label: "GitHub Actions", icon: <SiGithubactions /> },
+  { label: "C++", icon: <SiCplusplus /> },
   { label: "Python", icon: <DiPython /> },
-  { label: "PyTorch", icon: <SiPytorch /> },
 ];
 
 const Techstack: React.FC = () => {

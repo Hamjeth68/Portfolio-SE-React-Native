@@ -52,7 +52,7 @@ const NavBar: React.FC = () => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-2 text-xl font-semibold tracking-tight text-white">
           <span className="rounded-lg bg-white/5 px-3 py-2 text-base font-semibold uppercase text-brand-200 shadow-sm">HM.</span>
-          <span className="text-sm text-slate-300 hidden sm:inline">Software Engineer</span>
+          <span className="text-sm text-slate-300 hidden sm:inline">Software Engineer · AI Builder</span>
         </Link>
 
         <div className="flex items-center gap-3">

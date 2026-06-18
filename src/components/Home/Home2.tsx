@@ -3,6 +3,7 @@ import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import myImg from "../../Assets/avatar.svg";
+import Reveal from "../Reveal";
 
 const socials = [
   { href: "https://github.com/Hamjeth68", label: "GitHub", icon: <AiFillGithub /> },
@@ -15,9 +16,9 @@ const Home2: React.FC = () => {
     <section className="relative bg-white/5 py-12 md:py-16" id="about">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-10 md:grid-cols-3">
-          <div className="md:col-span-2 space-y-4 text-left">
+          <Reveal className="md:col-span-2 space-y-4 text-left">
             <h2 className="text-3xl font-semibold text-white md:text-4xl">
-              Let me <span className="text-brand-200">introduce</span> myself
+              Let me <span className="text-gradient-animate">introduce</span> myself
             </h2>
             <p className="text-lg leading-relaxed text-slate-200">
               I’m a product-minded engineer who fell in love with building elegant experiences. I ship high-quality
@@ -25,22 +26,22 @@ const Home2: React.FC = () => {
               modern tooling across Android and iOS.
             </p>
             <p className="text-base text-slate-300">
-              I enjoy crafting resilient systems, experimenting with ML-driven features, and collaborating closely with
-              designers to bring bold ideas to life. Lately, I’ve been leaning into performant frontends, edge-ready
-              backends, and thoughtful design systems.
+              I enjoy crafting resilient systems, building <span className="text-brand-200">LLM-powered and agentic
+              features</span>, and collaborating closely with designers to bring bold ideas to life. Lately, I’ve been
+              leaning into performant frontends, RAG-backed backends, and thoughtful AI-native design systems.
             </p>
-          </div>
-          <div className="flex justify-center">
+          </Reveal>
+          <Reveal delayMs={120} className="flex justify-center">
             <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} glareEnable={true} glareColor="#8b5cf6" glareBorderRadius="1rem">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-card">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 via-transparent to-cyan-400/10" />
                 <img src={myImg} alt="Hamjeth Misree" className="relative mx-auto h-64 w-auto" />
               </div>
             </Tilt>
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-3 text-center">
+        <Reveal className="mt-10 flex flex-col items-center gap-3 text-center">
           <h3 className="text-2xl font-semibold">Find me online</h3>
           <p className="text-slate-300">Feel free to connect, collaborate, or just say hello.</p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -57,7 +58,7 @@ const Home2: React.FC = () => {
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
