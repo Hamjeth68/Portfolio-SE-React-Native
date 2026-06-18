@@ -6,7 +6,8 @@ const AboutCard: React.FC = () => {
     <div className="card-surface space-y-4 p-6">
       <p className="text-lg leading-relaxed text-slate-200">
         I’m <span className="text-brand-200">Hamjeth Misree</span>, a Sri Lanka–raised Software Engineer who
-        blends product thinking with hands-on engineering to ship polished, resilient experiences.
+        blends product thinking with hands-on engineering — and lately, AI-augmented building — to ship
+        polished, resilient experiences.
       </p>
 
       <div className="space-y-2 text-slate-200">

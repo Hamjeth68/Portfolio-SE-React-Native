@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import homeLogo from "../../Assets/home-main.svg";
+import Reveal from "../Reveal";
 import Home2 from "./Home2";
 import Type from "./Type";
 
 const services = [
+  {
+    title: "AI-Augmented Engineering",
+    desc: "LLM-powered features, agentic workflows, and RAG pipelines built on OpenAI, Anthropic, and Gemini APIs with Model Context Protocol integrations.",
+    tags: ["LLM APIs", "Agents", "RAG", "MCP"],
+    span: "md:col-span-2",
+  },
   {
     title: "Product Engineering",
     desc: "From brief to launch-ready builds with design systems, scalable architectures, and automated quality gates.",
@@ -19,6 +26,7 @@ const services = [
     title: "Consulting & Audits",
     desc: "Architecture reviews, performance tuning, and roadmap co-planning tailored for startups shipping fast.",
     tags: ["Perf", "DX", "Roadmaps"],
+    span: "md:col-span-2",
   },
 ];
 
@@ -29,17 +37,22 @@ const Home: React.FC = () => {
 
       <div className="relative mx-auto max-w-6xl px-4 pt-16 md:pt-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          <div className="space-y-7 text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-100">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" /> Building for ambitious teams
+          <Reveal className="space-y-7 text-left">
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-100">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" /> Building for ambitious teams
+              </div>
+              <div className="pill text-xs font-semibold uppercase tracking-wide text-brand-100">
+                ✦ AI-Augmented Builder · 2026
+              </div>
             </div>
             <div className="space-y-3">
               <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
-                Bespoke products for web & mobile
+                Bespoke <span className="text-gradient-animate">products</span> for web, mobile & AI
               </h1>
               <p className="text-lg text-slate-300 md:text-xl">
-                I architect, design, and ship production-grade experiences—fast. Let’s move from idea to live builds
-                with confidence.
+                I architect, design, and ship production-grade experiences—fast, now with LLM-powered and agentic
+                features baked in. Let’s move from idea to live builds with confidence.
               </p>
             </div>
             <div className="rounded-2xl border border-white/5 bg-white/5 p-5 shadow-inner shadow-black/30">
@@ -76,10 +89,10 @@ const Home: React.FC = () => {
                 <p>Building products</p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           <div className="relative flex justify-center">
-            <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-brand-500/30 via-cyan-300/25 to-slate-900 blur-3xl" />
+            <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-gradient-to-tr from-brand-500/30 via-cyan-300/25 to-slate-900 blur-3xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-card">
               <img src={homeLogo} alt="Developer avatar" className="mx-auto h-80 w-auto" />
               <div className="mt-4 text-center text-sm text-slate-300">
@@ -103,21 +116,23 @@ const Home: React.FC = () => {
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.title} className="card-surface flex h-full flex-col gap-3 p-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-white">{service.title}</h3>
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-brand-100">Pro</span>
+            {services.map((service, index) => (
+              <Reveal key={service.title} delayMs={index * 80} className={service.span ?? ""}>
+                <div className="card-surface flex h-full flex-col gap-3 p-5">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-brand-100">Pro</span>
+                  </div>
+                  <p className="text-sm text-slate-300">{service.desc}</p>
+                  <div className="flex flex-wrap gap-2 text-xs text-brand-100">
+                    {service.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-[11px] uppercase tracking-wide">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-sm text-slate-300">{service.desc}</p>
-                <div className="flex flex-wrap gap-2 text-xs text-brand-100">
-                  {service.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-[11px] uppercase tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

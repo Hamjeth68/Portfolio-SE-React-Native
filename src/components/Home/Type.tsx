@@ -5,7 +5,13 @@ const Type: React.FC = () => {
   return (
     <Typewriter
       options={{
-        strings: ["Software Engineer", "React Native specialist", "Open source contributor", "Product-focused builder"],
+        strings: [
+          "Software Engineer",
+          "AI-Augmented Engineer",
+          "Agentic Systems Builder",
+          "React Native specialist",
+          "Open source contributor",
+        ],
         autoStart: true,
         loop: true,
         deleteSpeed: 40,

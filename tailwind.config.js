@@ -27,6 +27,29 @@ module.exports = {
       },
       backgroundImage: {
         'grid': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)"
+      },
+      backgroundSize: {
+        '300%': '300% 300%'
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+          '50%': { transform: 'translateY(-18px) translateX(10px)' }
+        },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to: { opacity: '1', transform: 'translateY(0)' }
+        }
+      },
+      animation: {
+        'gradient-x': 'gradient-x 6s ease infinite',
+        float: 'float 7s ease-in-out infinite',
+        'float-slow': 'float 11s ease-in-out infinite',
+        'fade-up': 'fade-up 0.7s ease-out forwards'
       }
     }
   },

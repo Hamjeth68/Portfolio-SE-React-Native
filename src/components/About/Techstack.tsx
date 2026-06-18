@@ -1,9 +1,10 @@
 import React from "react";
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiGit, DiJavascript1, DiMongodb, DiNodejs, DiPython, DiReact } from "react-icons/di";
-import { SiFirebase, SiNextdotjs, SiPytorch } from "react-icons/si";
+import { SiFirebase, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 const stackIcons = [
+  { label: "TypeScript", icon: <SiTypescript /> },
   { label: "C++", icon: <CgCPlusPlus /> },
   { label: "JavaScript", icon: <DiJavascript1 /> },
   { label: "Node.js", icon: <DiNodejs /> },
@@ -13,7 +14,6 @@ const stackIcons = [
   { label: "Git", icon: <DiGit /> },
   { label: "Firebase", icon: <SiFirebase /> },
   { label: "Python", icon: <DiPython /> },
-  { label: "PyTorch", icon: <SiPytorch /> },
 ];
 
 const Techstack: React.FC = () => {

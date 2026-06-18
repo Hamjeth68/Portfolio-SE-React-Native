@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from "../Reveal";
 import ProjectCard from "./ProjectCards";
 
 const projects = [
@@ -61,18 +62,20 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="relative py-14 md:py-20">
       <div className="mx-auto max-w-6xl space-y-6 px-4 text-center">
-        <div className="space-y-2">
+        <Reveal className="space-y-2">
           <h2 className="text-3xl font-semibold md:text-4xl">
-            My recent <span className="text-brand-200">work</span>
+            My recent <span className="text-gradient-animate">work</span>
           </h2>
           <p className="text-slate-300">
             A few shipped projects across fintech, commerce, and art-tech.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {projects.map((project, index) => (
+            <Reveal key={project.title} delayMs={index * 80}>
+              <ProjectCard {...project} />
+            </Reveal>
           ))}
         </div>
       </div>
