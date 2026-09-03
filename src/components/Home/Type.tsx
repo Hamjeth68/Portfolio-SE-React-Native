@@ -7,10 +7,10 @@ const Type: React.FC = () => {
       options={{
         strings: [
           "Software Engineer",
-          "AI-Augmented Engineer",
-          "Agentic Systems Builder",
+          "Product-focused builder",
           "React Native specialist",
-          "Open source contributor",
+          "Modern UI refresh partner",
+          "AI-native workflow builder",
         ],
         autoStart: true,
         loop: true,

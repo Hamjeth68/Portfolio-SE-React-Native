@@ -37,9 +37,12 @@ const ContactMe: React.FC = () => {
       <div className="mx-auto max-w-4xl space-y-6 px-4">
         <Reveal className="space-y-2 text-center">
           <h2 className="text-3xl font-semibold md:text-4xl">
-            Let’s work <span className="text-gradient-animate">together</span>
+            Let&apos;s build something <span className="text-gradient-animate">better</span>
           </h2>
-          <p className="text-slate-300">Drop me a note and I’ll get back to you soon.</p>
+          <p className="mx-auto max-w-2xl text-slate-300">
+            If you&apos;re building a product, refreshing an existing app, or need help shipping a stronger experience,
+            send me a note here.
+          </p>
         </Reveal>
 
         {firstError && <p className="text-center text-sm text-rose-300">{firstError}</p>}
@@ -48,8 +51,22 @@ const ContactMe: React.FC = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit(onSubmit)}
-            className="card-surface space-y-4 p-6"
+            className="hero-card space-y-4 p-6"
           >
+          <div className="grid gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/35 p-4 md:grid-cols-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Best for</p>
+              <p className="mt-2 text-sm text-slate-200">New products</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Also for</p>
+              <p className="mt-2 text-sm text-slate-200">UI refreshes</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-400">And</p>
+              <p className="mt-2 text-sm text-slate-200">AI-assisted features</p>
+            </div>
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
             <label className="flex flex-col gap-2 text-sm font-semibold text-slate-200">
               Name
@@ -76,7 +93,7 @@ const ContactMe: React.FC = () => {
             <textarea
               rows={5}
               {...register("message", { required: "Message is required" })}
-              placeholder="Tell me about your idea, a role, or how I can help."
+              placeholder="Tell me about your idea, product, redesign, or how I can help."
               className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50"
             />
           </label>
@@ -85,7 +102,7 @@ const ContactMe: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading || !isValid}
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-500 via-orange-500 to-cyan-400 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {isLoading ? "Sending…" : "Send message"}
             </button>

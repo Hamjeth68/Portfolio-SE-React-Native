@@ -20,10 +20,10 @@ type NavLink = {
 const links: NavLink[] = [
   { to: "/", label: "Home", icon: <AiOutlineHome /> },
   { to: "/about", label: "About", icon: <AiOutlineUser /> },
-  { to: "/project", label: "Projects", icon: <AiOutlineFundProjectionScreen /> },
+  { to: "/project", label: "Work", icon: <AiOutlineFundProjectionScreen /> },
   { to: "/resume", label: "Resume", icon: <CgFileDocument /> },
-  { to: "/contact", label: "Reach Me", icon: <AiOutlineMail /> },
-  { to: "https://github.com/Hamjeth68", label: "Blogs", icon: <ImBlog />, external: true },
+  { to: "/contact", label: "Contact", icon: <AiOutlineMail /> },
+  { to: "https://github.com/Hamjeth68", label: "GitHub", icon: <ImBlog />, external: true },
 ];
 
 const NavBar: React.FC = () => {
@@ -52,7 +52,7 @@ const NavBar: React.FC = () => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         <Link to="/" className="flex items-center gap-2 text-xl font-semibold tracking-tight text-white">
           <span className="rounded-lg bg-white/5 px-3 py-2 text-base font-semibold uppercase text-brand-200 shadow-sm">HM.</span>
-          <span className="text-sm text-slate-300 hidden sm:inline">Software Engineer · AI Builder</span>
+          <span className="hidden text-sm text-slate-300 sm:inline">Software Engineer · Product-Focused Builder</span>
         </Link>
 
         <div className="flex items-center gap-3">
@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
           >
             <CgGitFork />
             <AiFillStar />
-            <span className="hidden md:inline">Star on GitHub</span>
+            <span className="hidden md:inline">View source</span>
           </a>
 
           <button

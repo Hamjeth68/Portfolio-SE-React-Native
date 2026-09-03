@@ -16,24 +16,40 @@ const Home2: React.FC = () => {
     <section className="relative bg-white/5 py-12 md:py-16" id="about">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-10 md:grid-cols-3">
-          <Reveal className="md:col-span-2 space-y-4 text-left">
+          <Reveal className="space-y-4 text-left md:col-span-2">
+            <p className="section-kicker">About me</p>
             <h2 className="text-3xl font-semibold text-white md:text-4xl">
-              Let me <span className="text-gradient-animate">introduce</span> myself
+              Building software with a stronger eye for <span className="text-gradient-animate">product quality</span>
             </h2>
             <p className="text-lg leading-relaxed text-slate-200">
-              I’m a product-minded engineer who fell in love with building elegant experiences. I ship high-quality
-              mobile and web products using <span className="text-brand-200">React Native</span>, <span className="text-brand-200">React</span>, and
-              modern tooling across Android and iOS.
+              I&apos;m a product-minded engineer who cares about how software feels, not just whether it runs. My work
+              lives at the intersection of <span className="text-brand-200">React Native</span>, <span className="text-brand-200">React</span>, TypeScript,
+              and thoughtful interface design across Android, iOS, and web.
             </p>
             <p className="text-base text-slate-300">
-              I enjoy crafting resilient systems, building <span className="text-brand-200">LLM-powered and agentic
-              features</span>, and collaborating closely with designers to bring bold ideas to life. Lately, I’ve been
-              leaning into performant frontends, RAG-backed backends, and thoughtful AI-native design systems.
+              Lately I&apos;ve been refreshing my own portfolio around the kind of products I&apos;m actually building now:
+              education tools like <span className="text-brand-200">Skolee</span> and <span className="text-brand-200">Tuition Notes</span>, plus
+              hospitality-facing ideas like <span className="text-brand-200">Staymesh</span>. I also enjoy integrating
+              <span className="text-brand-200"> AI-native workflows</span> when they meaningfully improve the experience.
             </p>
+            <div className="grid gap-3 pt-2 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Mindset</p>
+                <p className="mt-2 text-sm text-slate-200">Product-led engineering</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Strength</p>
+                <p className="mt-2 text-sm text-slate-200">Polished cross-platform UX</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Current lens</p>
+                <p className="mt-2 text-sm text-slate-200">Education and platform systems</p>
+              </div>
+            </div>
           </Reveal>
           <Reveal delayMs={120} className="flex justify-center">
             <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} glareEnable={true} glareColor="#8b5cf6" glareBorderRadius="1rem">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-card">
+              <div className="hero-card relative overflow-hidden p-4 shadow-card">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 via-transparent to-cyan-400/10" />
                 <img src={myImg} alt="Hamjeth Misree" className="relative mx-auto h-64 w-auto" />
               </div>
@@ -43,7 +59,7 @@ const Home2: React.FC = () => {
 
         <Reveal className="mt-10 flex flex-col items-center gap-3 text-center">
           <h3 className="text-2xl font-semibold">Find me online</h3>
-          <p className="text-slate-300">Feel free to connect, collaborate, or just say hello.</p>
+          <p className="text-slate-300">Feel free to connect, collaborate, or reach out about product work.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {socials.map((item) => (
               <a
