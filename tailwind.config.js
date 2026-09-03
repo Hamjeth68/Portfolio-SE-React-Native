@@ -18,8 +18,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ["Space Grotesk", "Inter", "system-ui", "-apple-system", "sans-serif"],
-        body: ["Inter", "system-ui", "-apple-system", "sans-serif"]
+        display: ["DM Serif Display", "Georgia", "serif"],
+        body: ["Manrope", "system-ui", "-apple-system", "sans-serif"]
       },
       boxShadow: {
         glow: "0 0 30px rgba(139, 92, 246, 0.25)",

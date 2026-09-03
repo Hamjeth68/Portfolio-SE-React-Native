@@ -1,17 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --glass: rgba(255, 255, 255, 0.04);
-  --glass-strong: rgba(255, 255, 255, 0.08);
-  --page-gradient: radial-gradient(circle at 18% 16%, rgba(251, 191, 36, 0.16), transparent 24%),
-    radial-gradient(circle at 82% 4%, rgba(45, 212, 191, 0.1), transparent 30%),
-    radial-gradient(circle at 52% 66%, rgba(249, 115, 22, 0.12), transparent 34%);
-  --panel-border: rgba(255, 255, 255, 0.12);
-  --panel-shadow: 0 24px 70px rgba(2, 6, 23, 0.42);
+  --paper: #f7f6f2;
+  --ink: #112b42;
 }
 
 * {
@@ -19,10 +14,10 @@
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 font-body antialiased;
-  background-image: var(--page-gradient);
-  background-attachment: fixed;
-  letter-spacing: -0.01em;
+  @apply font-body antialiased;
+  background: var(--paper);
+  color: var(--ink);
+  letter-spacing: -0.015em;
   min-height: 100vh;
 }
 
@@ -39,16 +34,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
+  background: #e5e4df;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8b5cf6, #f97316);
+  background: #14324b;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #7c3aed, #ea580c);
+  background: #0c2033;
 }
 
 #tsparticles {
@@ -57,10 +52,6 @@ a {
   width: 100% !important;
   height: 100% !important;
   z-index: -10;
-}
-
-.glass-panel {
-  @apply bg-white/5 border border-white/10 backdrop-blur-xl;
 }
 
 @keyframes wave {
@@ -121,32 +112,27 @@ a {
   }
 
   .card-surface {
-    @apply glass-panel rounded-2xl shadow-card transition duration-300 ease-out hover:-translate-y-1 hover:shadow-glow;
-    backdrop-filter: blur(18px);
+    @apply rounded-xl border border-slate-200 bg-white transition duration-300 ease-out hover:border-slate-300;
   }
 
   .hero-card {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.5));
-    border: 1px solid var(--panel-border);
-    border-radius: 2rem;
-    box-shadow: var(--panel-shadow);
-    backdrop-filter: blur(18px);
+    @apply rounded-xl border border-slate-200 bg-white;
   }
 
   .metric-card {
-    @apply rounded-[1.5rem] border border-white/10 bg-white/5 px-4 py-4;
+    @apply rounded-xl border border-slate-200 bg-white px-4 py-4;
   }
 
   .section-kicker {
-    @apply text-xs font-semibold uppercase tracking-[0.28em] text-brand-200;
+    @apply text-xs font-bold uppercase tracking-[0.22em] text-[#37627e];
   }
 
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-slate-200 border border-white/10;
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600;
   }
 
   .text-gradient-animate {
-    @apply bg-300% bg-gradient-to-r from-brand-300 via-cyan-300 to-orange-300 bg-clip-text text-transparent animate-gradient-x;
+    @apply text-[#37627e];
   }
 
   .reveal {

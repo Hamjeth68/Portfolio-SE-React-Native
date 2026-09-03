@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CgFileDocument, CgGitFork } from "react-icons/cg";
+import { CgFileDocument } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import {
-  AiFillStar,
   AiOutlineFundProjectionScreen,
   AiOutlineHome,
   AiOutlineMail,
@@ -46,46 +45,33 @@ const NavBar: React.FC = () => {
   }, [pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${scrolled ? "bg-slate-900/80 backdrop-blur border-b border-white/10" : "bg-transparent"}`}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-        <Link to="/" className="flex items-center gap-2 text-xl font-semibold tracking-tight text-white">
-          <span className="rounded-lg bg-white/5 px-3 py-2 text-base font-semibold uppercase text-brand-200 shadow-sm">HM.</span>
-          <span className="hidden text-sm text-slate-300 sm:inline">Software Engineer · Product-Focused Builder</span>
+    <header className={`fixed top-0 left-0 right-0 z-40 border-b transition-all duration-300 ${scrolled ? "border-slate-200 bg-[#f7f6f2]/95 shadow-sm backdrop-blur" : "border-transparent bg-[#f7f6f2]/90"}`}>
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <Link to="/" className="flex items-center gap-3 text-xl font-semibold tracking-tight text-slate-950">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#14324b] text-xs font-bold uppercase tracking-wide text-white">HM</span>
+          <span className="hidden text-sm font-medium text-slate-600 sm:inline">Hamjeth Misree</span>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="https://github.com/Hamjeth68/Portfolio-SE-React-Native"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-slate-100 transition hover:-translate-y-0.5 hover:border-brand-400 hover:bg-white/10 hover:text-brand-100 sm:flex"
-          >
-            <CgGitFork />
-            <AiFillStar />
-            <span className="hidden md:inline">View source</span>
-          </a>
-
+        <div className="flex items-center gap-2">
           <button
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:border-brand-400 hover:bg-white/10 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-900 transition hover:border-slate-400 md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle navigation"
           >
             <span className="sr-only">Toggle navigation</span>
             <div className="space-y-1.5">
-              <span className={`block h-0.5 w-6 rounded-full bg-white transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
-              <span className={`block h-0.5 w-6 rounded-full bg-white transition ${isOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 w-6 rounded-full bg-white transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
             </div>
           </button>
         </div>
       </div>
 
       <nav
-        className={`md:border-t md:border-white/5 md:bg-transparent ${isOpen ? "max-h-96" : "max-h-0 md:max-h-none"} overflow-hidden transition-all duration-300 md:max-h-none md:overflow-visible`}
+        className={`${isOpen ? "max-h-96 border-t border-slate-200" : "max-h-0 md:max-h-none"} overflow-hidden transition-all duration-300 md:max-h-none md:overflow-visible`}
       >
-        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 pb-4 text-sm font-medium text-slate-200 md:flex-row md:items-center md:justify-end md:gap-2 md:pb-4">
+        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-600 md:-mt-10 md:flex-row md:items-center md:justify-end md:gap-1 md:py-0">
           {links.map((link) => (
             <li key={link.label}>
               {link.external ? (
@@ -93,7 +79,7 @@ const NavBar: React.FC = () => {
                   href={link.to}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 rounded-xl px-3 py-2 transition hover:bg-white/5 hover:text-brand-100"
+                  className="flex items-center gap-2 rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-[#14324b]"
                 >
                   <span className="text-lg">{link.icon}</span>
                   {link.label}
@@ -101,7 +87,7 @@ const NavBar: React.FC = () => {
               ) : (
                 <Link
                   to={link.to}
-                  className={`flex items-center gap-2 rounded-xl px-3 py-2 transition hover:bg-white/5 hover:text-brand-100 ${pathname === link.to ? "bg-white/5 text-brand-100" : ""}`}
+                  className={`flex items-center gap-2 rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-[#14324b] ${pathname === link.to ? "bg-[#14324b] text-white hover:bg-[#14324b] hover:text-white" : ""}`}
                 >
                   <span className="text-lg">{link.icon}</span>
                   {link.label}

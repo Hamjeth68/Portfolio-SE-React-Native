@@ -4,7 +4,6 @@ import About from "./components/About/About";
 import Footer from "./components/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
-import Particle from "./components/Particle";
 import Preloader from "./components/Pre";
 import Projects from "./components/Projects/Projects";
 import Resume from "./components/Resume/ResumeNew";
@@ -22,8 +21,7 @@ function App(): JSX.Element {
   return (
     <Router>
       <Preloader isLoading={isLoading} />
-      <div className={`relative min-h-screen bg-slate-950 text-slate-100 font-body ${isLoading ? "overflow-hidden h-screen" : ""}`}>
-        <Particle />
+      <div className={`relative min-h-screen bg-[#f7f6f2] text-slate-900 font-body ${isLoading ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <ScrollToTop />
         <main className="relative pt-20">
