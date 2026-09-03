@@ -48,9 +48,9 @@ const AISkills: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <h3 className="text-2xl font-semibold">AI & ML capabilities</h3>
-        <span className="pill text-brand-100">
-          <TbSparkles /> 2026 stack
+        <h3 className="text-2xl font-bold text-[#14324b]">AI & ML capabilities</h3>
+        <span className="pill text-[#37627e]">
+          <TbSparkles /> Applied AI
         </span>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
@@ -58,15 +58,15 @@ const AISkills: React.FC = () => {
           <Reveal key={skill.title} delayMs={index * 80} className={skill.span ?? ""}>
             <div className="card-surface flex h-full flex-col gap-3 p-5">
               <div className="flex items-center justify-between">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-2xl text-brand-200">
+                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#e8eff3] text-2xl text-[#37627e]">
                   {skill.icon}
                 </span>
               </div>
-              <h4 className="text-lg font-semibold text-white">{skill.title}</h4>
-              <p className="flex-1 text-sm leading-relaxed text-slate-300">{skill.description}</p>
+              <h4 className="text-lg font-bold text-[#14324b]">{skill.title}</h4>
+              <p className="flex-1 text-sm leading-relaxed text-slate-600">{skill.description}</p>
               <div className="flex flex-wrap gap-2">
                 {skill.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-[11px] uppercase tracking-wide text-brand-100">
+                  <span key={tag} className="rounded-full bg-[#e8eff3] px-3 py-1 text-[11px] uppercase tracking-wide text-[#37627e]">
                     {tag}
                   </span>
                 ))}

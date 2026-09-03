@@ -22,7 +22,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbDeviceMobile } from "react-icons/tb";
+import { TbBrain, TbDeviceMobile } from "react-icons/tb";
 
 const stackIcons = [
   { label: "TypeScript", icon: <SiTypescript /> },
@@ -52,15 +52,16 @@ const stackIcons = [
   { label: "GitHub Actions", icon: <SiGithubactions /> },
   { label: "C++", icon: <SiCplusplus /> },
   { label: "Python", icon: <DiPython /> },
+  { label: "AI / ML", icon: <TbBrain /> },
 ];
 
 const Techstack: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
       {stackIcons.map((item) => (
-        <div key={item.label} className="card-surface flex flex-col items-center gap-2 p-4 text-4xl text-brand-200">
+        <div key={item.label} className="card-surface flex flex-col items-center gap-2 p-4 text-4xl text-[#37627e]">
           {item.icon}
-          <span className="text-xs font-medium uppercase tracking-wide text-slate-300">{item.label}</span>
+          <span className="text-xs font-medium uppercase tracking-wide text-slate-600">{item.label}</span>
         </div>
       ))}
     </div>

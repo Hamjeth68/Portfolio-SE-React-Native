@@ -1,5 +1,4 @@
 import React from "react";
-import laptopImg from "../../Assets/about.png";
 import Reveal from "../Reveal";
 import Aboutcard from "./AboutCard";
 import AISkills from "./AISkills";
@@ -11,18 +10,29 @@ const About: React.FC = () => {
   return (
     <section className="relative py-14 md:py-20" aria-labelledby="about-heading">
       <div className="mx-auto max-w-6xl space-y-12 px-4">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+        <div className="grid items-start gap-10 border-b border-slate-200 pb-12 md:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="space-y-4 text-left">
-            <h2 id="about-heading" className="text-3xl font-semibold md:text-4xl">
-              Know who <span className="text-gradient-animate">I am</span>
+            <p className="section-kicker">About</p>
+            <h2 id="about-heading" className="font-display text-5xl leading-tight text-[#112b42] md:text-6xl">
+              Engineering with a product point of view.
             </h2>
             <Aboutcard />
           </Reveal>
-          <div className="relative flex justify-center">
-            <div className="absolute right-6 top-6 h-28 w-28 animate-float rounded-full bg-brand-500/20 blur-3xl" />
-            <div className="absolute left-10 bottom-0 h-24 w-24 animate-float-slow rounded-full bg-cyan-400/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-card">
-              <img src={laptopImg} alt="Working setup" className="mx-auto h-72 w-auto" />
+          <div className="border-l-2 border-[#37627e] pl-6 text-left md:mt-20">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Working principles</p>
+            <div className="mt-5 space-y-5">
+              <div>
+                <p className="font-bold text-[#14324b]">Start with the real workflow</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">The best interface follows the work people are trying to get done.</p>
+              </div>
+              <div>
+                <p className="font-bold text-[#14324b]">Make the system understandable</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">Architecture, copy, and interaction should help teams make better decisions.</p>
+              </div>
+              <div>
+                <p className="font-bold text-[#14324b]">Use AI responsibly</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">Automation belongs where it has a clear user benefit, strong context, and appropriate oversight.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -32,12 +42,12 @@ const About: React.FC = () => {
         </Reveal>
 
         <Reveal className="space-y-6">
-          <h3 className="text-2xl font-semibold">Professional skillset</h3>
+          <h3 className="text-2xl font-bold text-[#14324b]">Core engineering skills</h3>
           <Techstack />
         </Reveal>
 
         <Reveal className="space-y-6">
-          <h3 className="text-2xl font-semibold">Tools I use</h3>
+          <h3 className="text-2xl font-bold text-[#14324b]">Tools I use</h3>
           <Toolstack />
         </Reveal>
 

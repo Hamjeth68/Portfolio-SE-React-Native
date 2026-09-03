@@ -6,16 +6,16 @@ const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-10 border-t border-white/5 bg-slate-950/80">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-center text-sm text-slate-300 md:flex-row md:items-center md:justify-between">
-        <p className="text-slate-400">Designed and developed by Hamjeth Misree · product engineering with stronger UI craft</p>
-        <p className="text-slate-400">© {year} HM</p>
+    <footer className="mt-16 border-t border-slate-200 bg-[#ecebe6]">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-center text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+        <p>Hamjeth Misree · software engineer and product builder</p>
+        <p>© {year}</p>
         <div className="flex items-center justify-center gap-3">
           <a
             href="https://github.com/Hamjeth68"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-white transition hover:border-brand-400 hover:bg-white/10"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-transparent text-base text-slate-700 transition hover:border-[#14324b] hover:text-[#14324b]"
             aria-label="GitHub"
           >
             <AiFillGithub />
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             href="https://twitter.com/i/flow/single_sign_on"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-white transition hover:border-brand-400 hover:bg-white/10"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-transparent text-base text-slate-700 transition hover:border-[#14324b] hover:text-[#14324b]"
             aria-label="Twitter"
           >
             <AiOutlineTwitter />
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
             href="https://www.linkedin.com/in/hamjeth-misree-8a6a621a0/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-white transition hover:border-brand-400 hover:bg-white/10"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-transparent text-base text-slate-700 transition hover:border-[#14324b] hover:text-[#14324b]"
             aria-label="LinkedIn"
           >
             <FaLinkedinIn />
