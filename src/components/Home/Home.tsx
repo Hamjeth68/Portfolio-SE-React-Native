@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LinkedInPost from "../LinkedInPost";
 import Reveal from "../Reveal";
 import Home2 from "./Home2";
 
@@ -51,6 +52,8 @@ const Home: React.FC = () => {
             </Reveal>
           ))}
         </div>
+
+        <LinkedInPost />
       </div>
       <Home2 />
     </section>
