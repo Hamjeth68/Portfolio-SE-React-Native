@@ -4,13 +4,6 @@ import ProjectCard from "./ProjectCards";
 
 const currentWork = [
   {
-    title: "Healthelic",
-    description: "A clinical AI platform that helps physicians structure patient history, synthesize evidence, and build treatment plans within supervised, accountable workflows.",
-    category: "Clinical AI",
-    status: "In development",
-    stack: ["Next.js", "NestJS", "Clinical governance"],
-  },
-  {
     title: "Skolee",
     description: "A school operations product focused on bringing communication, learning workflows, and day-to-day administration into one clearer system.",
     category: "Education",

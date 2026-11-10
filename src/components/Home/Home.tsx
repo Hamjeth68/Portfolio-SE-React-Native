@@ -38,7 +38,6 @@ const Home: React.FC = () => {
               <p className="mt-3 text-xl font-semibold text-[#14324b]">Skolee</p>
               <p className="mt-1 text-xl font-semibold text-[#14324b]">Tuition Notes</p>
               <p className="mt-1 text-xl font-semibold text-[#14324b]">Staymesh</p>
-              <p className="mt-5 text-sm leading-relaxed text-slate-500">Plus Healthelic, a governed clinical AI platform for physician workflows.</p>
             </aside>
           </Reveal>
         </div>

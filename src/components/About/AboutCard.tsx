@@ -12,7 +12,7 @@ const AboutCard: React.FC = () => {
 
       <p className="text-sm leading-relaxed text-slate-600">
         Right now, a big part of my energy is going into products like <span className="font-semibold text-[#14324b]">Skolee</span>,
-        <span className="font-semibold text-[#14324b]"> Tuition Notes</span>, <span className="font-semibold text-[#14324b]">Staymesh</span>, and <span className="font-semibold text-[#14324b]">Healthelic</span>:
+        <span className="font-semibold text-[#14324b]"> Tuition Notes</span>, and <span className="font-semibold text-[#14324b]">Staymesh</span>:
         building software that feels current, useful, and well considered from both a user and system perspective.
       </p>
 
