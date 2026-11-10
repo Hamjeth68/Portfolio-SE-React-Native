@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Portfolio-SE-React-Native/static/css/main.251fcfd5.css",
-    "main.js": "/Portfolio-SE-React-Native/static/js/main.34fc0bbd.js",
+    "main.css": "/Portfolio-SE-React-Native/static/css/main.cdf8eeeb.css",
+    "main.js": "/Portfolio-SE-React-Native/static/js/main.6293dd28.js",
     "static/js/259.749cec7e.chunk.js": "/Portfolio-SE-React-Native/static/js/259.749cec7e.chunk.js",
     "static/media/HamjethMisree.pdf": "/Portfolio-SE-React-Native/static/media/HamjethMisree.034b67578a2d1d03fa68.pdf",
     "index.html": "/Portfolio-SE-React-Native/index.html",
-    "main.251fcfd5.css.map": "/Portfolio-SE-React-Native/static/css/main.251fcfd5.css.map",
-    "main.34fc0bbd.js.map": "/Portfolio-SE-React-Native/static/js/main.34fc0bbd.js.map",
+    "main.cdf8eeeb.css.map": "/Portfolio-SE-React-Native/static/css/main.cdf8eeeb.css.map",
+    "main.6293dd28.js.map": "/Portfolio-SE-React-Native/static/js/main.6293dd28.js.map",
     "259.749cec7e.chunk.js.map": "/Portfolio-SE-React-Native/static/js/259.749cec7e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.251fcfd5.css",
-    "static/js/main.34fc0bbd.js"
+    "static/css/main.cdf8eeeb.css",
+    "static/js/main.6293dd28.js"
   ]
 }
