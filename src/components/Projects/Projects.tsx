@@ -4,11 +4,11 @@ import ProjectCard from "./ProjectCards";
 
 const currentWork = [
   {
-    title: "Agentic Pentesting",
-    description: "An AI-assisted security testing platform: a FastAPI control plane and an isolated worker that run an open-source agentic pentesting engine against applications a team owns, with budget-capped scans and tracked findings.",
+    title: "Pentra",
+    description: "An AI pentesting platform: a web dashboard and API that run autonomous, agent-driven security tests against applications a team owns, inside isolated sandboxes, with budget-capped scans and tracked findings.",
     category: "Security",
     status: "In development",
-    stack: ["Python", "FastAPI", "Docker sandboxing"],
+    stack: ["Python", "FastAPI", "Next.js"],
   },
   {
     title: "Skolee",
