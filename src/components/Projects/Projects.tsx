@@ -4,6 +4,13 @@ import ProjectCard from "./ProjectCards";
 
 const currentWork = [
   {
+    title: "Agentic Pentesting",
+    description: "An AI-assisted security testing platform: a FastAPI control plane and an isolated worker that run an open-source agentic pentesting engine against applications a team owns, with budget-capped scans and tracked findings.",
+    category: "Security",
+    status: "In development",
+    stack: ["Python", "FastAPI", "Docker sandboxing"],
+  },
+  {
     title: "Skolee",
     description: "A school operations product focused on bringing communication, learning workflows, and day-to-day administration into one clearer system.",
     category: "Education",
@@ -27,14 +34,6 @@ const currentWork = [
 ];
 
 const shippedWork = [
-  {
-    title: "ClassVeew",
-    description: "A school management platform for preschools and kindergartens, supporting enrollment, documents, admin operations, and scorecards.",
-    category: "School SaaS",
-    status: "Shipped",
-    stack: ["Admin panel", "Enrollment", "Scoring"],
-    demoLink: "https://apps.apple.com/lk/app/classveew/id6747874553",
-  },
   {
     title: "Ferry-Pay",
     description: "A mobile banking companion for managing payroll cards, spending, rewards, and card controls.",
@@ -73,7 +72,7 @@ const Projects: React.FC = () => {
         <Reveal className="mt-16 border-b border-slate-300 pb-4">
           <h2 className="text-xl font-bold text-[#14324b]">Previously shipped</h2>
         </Reveal>
-        <div className="grid gap-x-10 gap-y-8 md:grid-cols-3">
+        <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">
           {shippedWork.map((project, index) => <Reveal key={project.title} delayMs={index * 60}><ProjectCard {...project} index={index} /></Reveal>)}
         </div>
       </div>
