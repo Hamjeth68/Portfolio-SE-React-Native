@@ -15,8 +15,8 @@ const Type: React.FC = () => {
         autoStart: true,
         loop: true,
         deleteSpeed: 40,
-        wrapperClassName: "text-2xl md:text-3xl text-brand-100 leading-snug",
-        cursorClassName: "text-3xl text-brand-200",
+        wrapperClassName: "text-2xl md:text-3xl text-ink leading-snug",
+        cursorClassName: "text-3xl text-accent",
       }}
     />
   );

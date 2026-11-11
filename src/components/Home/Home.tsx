@@ -10,44 +10,60 @@ const focusAreas = [
   ["03", "Cross-platform delivery", "Building considered experiences across React, React Native, TypeScript, and backend systems."],
 ];
 
+const building = ["Skolee", "Tuition Notes", "Staymesh"];
+
 const Home: React.FC = () => {
   return (
     <section id="home" className="pb-0">
       <div className="mx-auto max-w-6xl px-4 pt-16 md:pt-28">
-        <div className="border-b border-slate-200 pb-12 md:pb-16">
-          <Reveal className="grid gap-10 text-left md:grid-cols-[1.5fr_0.5fr] md:items-end">
+        <div className="pb-12 md:pb-16">
+          <Reveal className="grid gap-10 text-left md:grid-cols-[1.45fr_0.55fr] md:items-end">
             <div>
               <p className="section-kicker">Independent software engineer</p>
-              <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[0.98] text-[#112b42] md:text-7xl">
-                Useful software, built with care.
+              <h1 className="mt-5 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight text-ink md:text-7xl">
+                Useful software,{" "}
+                <br className="hidden sm:block" />
+                built with <span className="text-accent">care</span>
+                <span className="ml-1 inline-block h-[0.8em] w-[0.08em] translate-y-[0.06em] animate-blink bg-accent align-baseline motion-reduce:animate-none" aria-hidden="true" />
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-soft md:text-xl">
                 I&apos;m Hamjeth Misree, a product-focused engineer building web, mobile, and AI-enabled systems that are calm to use and solid underneath.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/project" className="rounded-lg bg-[#14324b] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0c2033]">
+                <Link to="/project" className="btn-primary">
                   View selected work
                 </Link>
-                <Link to="/contact" className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-[#14324b] hover:text-[#14324b]">
+                <Link to="/contact" className="btn-secondary">
                   Start a conversation
                 </Link>
               </div>
             </div>
-            <aside className="border-l-2 border-[#37627e] pl-5 md:mb-1">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Currently building</p>
-              <p className="mt-3 text-xl font-semibold text-[#14324b]">Skolee</p>
-              <p className="mt-1 text-xl font-semibold text-[#14324b]">Tuition Notes</p>
-              <p className="mt-1 text-xl font-semibold text-[#14324b]">Staymesh</p>
+            <aside className="overflow-hidden rounded-xl border border-line bg-surface/80 md:mb-1" aria-label="Currently building">
+              <div className="flex items-center gap-1.5 border-b border-line px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                <span className="ml-2 font-mono text-[11px] text-muted">building.log</span>
+              </div>
+              <div className="space-y-2.5 p-4 font-mono text-sm">
+                <p className="text-xs uppercase tracking-[0.16em] text-muted">Currently building</p>
+                {building.map((name) => (
+                  <p key={name} className="flex items-center gap-2 text-ink">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                    {name}
+                  </p>
+                ))}
+              </div>
             </aside>
           </Reveal>
         </div>
 
-        <div className="grid border-b border-slate-200 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {focusAreas.map(([number, title, description]) => (
-            <Reveal key={number} className="border-b border-slate-200 py-8 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-              <p className="text-xs font-bold tracking-[0.2em] text-[#37627e]">{number}</p>
-              <h2 className="mt-4 text-xl font-bold text-[#14324b]">{title}</h2>
-              <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">{description}</p>
+            <Reveal key={number} className="card-surface p-6">
+              <p className="font-mono text-xs text-accent">{number}</p>
+              <h2 className="mt-4 text-lg font-semibold text-ink">{title}</h2>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">{description}</p>
             </Reveal>
           ))}
         </div>

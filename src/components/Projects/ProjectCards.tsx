@@ -12,22 +12,37 @@ type ProjectCardProps = {
 };
 
 const ProjectCards: React.FC<ProjectCardProps> = ({ title, description, category, status, stack, demoLink, index }) => {
+  const shipped = status.toLowerCase() === "shipped";
+
   return (
-    <article className="group flex h-full flex-col border-t border-slate-300 pt-5 text-left">
+    <article className="card-surface group flex h-full flex-col p-6 text-left">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#37627e]">{String(index + 1).padStart(2, "0")} / {category}</p>
-          <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#112b42]">{title}</h3>
+          <p className="font-mono text-xs text-muted">
+            <span className="text-accent">{String(index + 1).padStart(2, "0")}</span> / {category}
+          </p>
+          <h3 className="mt-3 text-xl font-semibold tracking-tight text-ink">{title}</h3>
         </div>
-        <span className="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600">{status}</span>
+        <span
+          className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] ${
+            shipped ? "border-accent/40 bg-accent/10 text-accent" : "border-line bg-elevated text-muted"
+          }`}
+        >
+          <span className={`h-1.5 w-1.5 rounded-full ${shipped ? "bg-accent" : "bg-amber-400"}`} aria-hidden="true" />
+          {status}
+        </span>
       </div>
-      <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{description}</p>
-      <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2 border-t border-slate-200 pt-4">
-        {stack.map((item) => <span key={item} className="text-xs font-semibold text-slate-500">{item}</span>)}
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{description}</p>
+      <div className="mt-5 flex flex-wrap gap-2 border-t border-line pt-4">
+        {stack.map((item) => (
+          <span key={item} className="tag">
+            {item}
+          </span>
+        ))}
       </div>
       {demoLink && (
-        <a href={demoLink} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-[#14324b] hover:text-[#37627e]">
-          View product <CgArrowTopRight className="text-lg" />
+        <a href={demoLink} target="_blank" rel="noreferrer" className="link-arrow mt-5 self-start">
+          View product <CgArrowTopRight className="text-base" />
         </a>
       )}
     </article>

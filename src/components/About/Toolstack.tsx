@@ -13,9 +13,9 @@ const Toolstack: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
       {tools.map((tool) => (
-        <div key={tool.label} className="card-surface flex flex-col items-center gap-2 p-4 text-3xl text-brand-200">
+        <div key={tool.label} className="card-surface flex flex-col items-center gap-2 p-4 text-3xl text-soft hover:text-accent">
           {tool.icon}
-          <span className="text-xs font-medium uppercase tracking-wide text-slate-300">{tool.label}</span>
+          <span className="font-mono text-[11px] text-muted">{tool.label}</span>
         </div>
       ))}
     </div>

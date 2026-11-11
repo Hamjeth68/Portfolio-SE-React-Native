@@ -58,21 +58,23 @@ const Projects: React.FC = () => {
       <div className="mx-auto max-w-6xl px-4">
         <Reveal className="max-w-3xl text-left">
           <p className="section-kicker">Selected work</p>
-          <h1 className="mt-4 font-display text-5xl leading-[1.02] text-[#112b42] md:text-6xl">A focused selection of products in progress and products already in the world.</h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">This page is intentionally curated. Each entry represents product work where the interface, operational workflow, and technical foundation need to hold together.</p>
+          <h1 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-ink md:text-6xl">A focused selection of products in progress and products already in the world.</h1>
+          <p className="mt-6 text-lg leading-relaxed text-soft">This page is intentionally curated. Each entry represents product work where the interface, operational workflow, and technical foundation need to hold together.</p>
         </Reveal>
 
-        <Reveal className="mt-16 border-b border-slate-300 pb-4">
-          <h2 className="text-xl font-bold text-[#14324b]">In progress</h2>
+        <Reveal className="mb-6 mt-16 flex items-center gap-3">
+          <h2 className="font-mono text-sm uppercase tracking-[0.16em] text-muted">In progress</h2>
+          <span className="h-px flex-1 bg-line" aria-hidden="true" />
         </Reveal>
-        <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {currentWork.map((project, index) => <Reveal key={project.title} delayMs={index * 60}><ProjectCard {...project} index={index} /></Reveal>)}
         </div>
 
-        <Reveal className="mt-16 border-b border-slate-300 pb-4">
-          <h2 className="text-xl font-bold text-[#14324b]">Previously shipped</h2>
+        <Reveal className="mb-6 mt-16 flex items-center gap-3">
+          <h2 className="font-mono text-sm uppercase tracking-[0.16em] text-muted">Previously shipped</h2>
+          <span className="h-px flex-1 bg-line" aria-hidden="true" />
         </Reveal>
-        <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {shippedWork.map((project, index) => <Reveal key={project.title} delayMs={index * 60}><ProjectCard {...project} index={index} /></Reveal>)}
         </div>
       </div>

@@ -59,9 +59,9 @@ const Techstack: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
       {stackIcons.map((item) => (
-        <div key={item.label} className="card-surface flex flex-col items-center gap-2 p-4 text-4xl text-[#37627e]">
+        <div key={item.label} className="card-surface flex flex-col items-center gap-2 p-4 text-3xl text-soft hover:text-accent">
           {item.icon}
-          <span className="text-xs font-medium uppercase tracking-wide text-slate-600">{item.label}</span>
+          <span className="font-mono text-[11px] text-muted">{item.label}</span>
         </div>
       ))}
     </div>

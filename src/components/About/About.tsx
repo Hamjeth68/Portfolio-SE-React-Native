@@ -6,34 +6,37 @@ import Github from "./Github";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 
+const principles = [
+  ["Start with the real workflow", "The best interface follows the work people are trying to get done."],
+  ["Make the system understandable", "Architecture, copy, and interaction should help teams make better decisions."],
+  ["Use AI responsibly", "Automation belongs where it has a clear user benefit, strong context, and appropriate oversight."],
+];
+
 const About: React.FC = () => {
   return (
     <section className="relative py-14 md:py-20" aria-labelledby="about-heading">
-      <div className="mx-auto max-w-6xl space-y-12 px-4">
-        <div className="grid items-start gap-10 border-b border-slate-200 pb-12 md:grid-cols-[1.1fr_0.9fr]">
+      <div className="mx-auto max-w-6xl space-y-16 px-4">
+        <div className="grid items-start gap-10 md:grid-cols-[1.1fr_0.9fr]">
           <Reveal className="space-y-4 text-left">
             <p className="section-kicker">About</p>
-            <h2 id="about-heading" className="font-display text-5xl leading-tight text-[#112b42] md:text-6xl">
+            <h2 id="about-heading" className="text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">
               Engineering with a product point of view.
             </h2>
             <Aboutcard />
           </Reveal>
-          <div className="border-l-2 border-[#37627e] pl-6 text-left md:mt-20">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Working principles</p>
-            <div className="mt-5 space-y-5">
-              <div>
-                <p className="font-bold text-[#14324b]">Start with the real workflow</p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">The best interface follows the work people are trying to get done.</p>
-              </div>
-              <div>
-                <p className="font-bold text-[#14324b]">Make the system understandable</p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">Architecture, copy, and interaction should help teams make better decisions.</p>
-              </div>
-              <div>
-                <p className="font-bold text-[#14324b]">Use AI responsibly</p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">Automation belongs where it has a clear user benefit, strong context, and appropriate oversight.</p>
-              </div>
-            </div>
+          <div className="card-surface p-6 text-left md:mt-20">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">Working principles</p>
+            <ol className="mt-5 space-y-5">
+              {principles.map(([title, body], i) => (
+                <li key={title} className="flex gap-4">
+                  <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p className="font-semibold text-ink">{title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
 
@@ -42,12 +45,12 @@ const About: React.FC = () => {
         </Reveal>
 
         <Reveal className="space-y-6">
-          <h3 className="text-2xl font-bold text-[#14324b]">Core engineering skills</h3>
+          <h3 className="text-2xl font-semibold tracking-tight text-ink">Core engineering skills</h3>
           <Techstack />
         </Reveal>
 
         <Reveal className="space-y-6">
-          <h3 className="text-2xl font-bold text-[#14324b]">Tools I use</h3>
+          <h3 className="text-2xl font-semibold tracking-tight text-ink">Tools I use</h3>
           <Toolstack />
         </Reveal>
 

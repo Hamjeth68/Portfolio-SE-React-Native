@@ -25,6 +25,9 @@ const links: NavLink[] = [
   { to: "https://github.com/Hamjeth68", label: "GitHub", icon: <ImBlog />, external: true },
 ];
 
+const linkBase =
+  "flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent";
+
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,49 +48,78 @@ const NavBar: React.FC = () => {
   }, [pathname]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 border-b transition-all duration-300 ${scrolled ? "border-slate-200 bg-[#f7f6f2]/95 shadow-sm backdrop-blur" : "border-transparent bg-[#f7f6f2]/90"}`}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-3 text-xl font-semibold tracking-tight text-slate-950">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#14324b] text-xs font-bold uppercase tracking-wide text-white">HM</span>
-          <span className="hidden text-sm font-medium text-slate-600 sm:inline">Hamjeth Misree</span>
+    <header
+      className={`fixed left-0 right-0 top-0 z-40 border-b backdrop-blur transition-all duration-300 ${
+        scrolled ? "border-line bg-bg/85" : "border-transparent bg-bg/60"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <Link to="/" className="flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-accent/50 bg-accent/10 font-mono text-xs font-semibold text-accent">
+            HM
+          </span>
+          <span className="hidden font-mono text-sm text-muted sm:inline">
+            hamjeth<span className="text-accent">.</span>misree
+          </span>
         </Link>
 
-        <div className="flex items-center gap-2">
-          <button
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-900 transition hover:border-slate-400 md:hidden"
-            onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle navigation"
-          >
-            <span className="sr-only">Toggle navigation</span>
-            <div className="space-y-1.5">
-              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
-              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 w-5 rounded-full bg-slate-900 transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
-            </div>
-          </button>
-        </div>
+        <nav className="hidden md:block" aria-label="Main">
+          <ul className="flex items-center gap-1">
+            {links.map((link) => (
+              <li key={link.label}>
+                {link.external ? (
+                  <a href={link.to} target="_blank" rel="noreferrer" className={`${linkBase} text-muted hover:bg-elevated hover:text-ink`}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.to}
+                    aria-current={pathname === link.to ? "page" : undefined}
+                    className={`${linkBase} ${
+                      pathname === link.to ? "bg-accent/10 text-accent" : "text-muted hover:bg-elevated hover:text-ink"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          className="flex h-10 w-10 items-center justify-center rounded-md border border-line bg-surface text-ink transition hover:border-accent/60 md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+        >
+          <div className="space-y-1.5">
+            <span className={`block h-0.5 w-5 rounded-full bg-ink transition ${isOpen ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`block h-0.5 w-5 rounded-full bg-ink transition ${isOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 w-5 rounded-full bg-ink transition ${isOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+          </div>
+        </button>
       </div>
 
       <nav
-        className={`${isOpen ? "max-h-96 border-t border-slate-200" : "max-h-0 md:max-h-none"} overflow-hidden transition-all duration-300 md:max-h-none md:overflow-visible`}
+        aria-label="Mobile"
+        className={`${isOpen ? "max-h-96 border-t border-line" : "max-h-0"} overflow-hidden bg-bg/95 transition-all duration-300 md:hidden`}
       >
-        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 text-sm font-medium text-slate-600 md:-mt-10 md:flex-row md:items-center md:justify-end md:gap-1 md:py-0">
+        <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
           {links.map((link) => (
             <li key={link.label}>
               {link.external ? (
-                <a
-                  href={link.to}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-[#14324b]"
-                >
+                <a href={link.to} target="_blank" rel="noreferrer" className={`${linkBase} text-muted hover:bg-elevated hover:text-ink`}>
                   <span className="text-lg">{link.icon}</span>
                   {link.label}
                 </a>
               ) : (
                 <Link
                   to={link.to}
-                  className={`flex items-center gap-2 rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-[#14324b] ${pathname === link.to ? "bg-[#14324b] text-white hover:bg-[#14324b] hover:text-white" : ""}`}
+                  aria-current={pathname === link.to ? "page" : undefined}
+                  className={`${linkBase} ${
+                    pathname === link.to ? "bg-accent/10 text-accent" : "text-muted hover:bg-elevated hover:text-ink"
+                  }`}
                 >
                   <span className="text-lg">{link.icon}</span>
                   {link.label}

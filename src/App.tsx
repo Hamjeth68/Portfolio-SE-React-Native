@@ -21,7 +21,7 @@ function App(): JSX.Element {
   return (
     <Router>
       <Preloader isLoading={isLoading} />
-      <div className={`relative min-h-screen bg-[#f7f6f2] text-slate-900 font-body ${isLoading ? "overflow-hidden h-screen" : ""}`}>
+      <div className={`relative min-h-screen font-body text-soft ${isLoading ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         <ScrollToTop />
         <main className="relative pt-20">

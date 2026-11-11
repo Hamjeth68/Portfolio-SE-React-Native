@@ -1,57 +1,50 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#f5f3ff",
-          100: "#ede9fe",
-          200: "#ddd6fe",
-          300: "#c4b5fd",
-          400: "#a78bfa",
-          500: "#8b5cf6",
-          600: "#7c3aed",
-          700: "#6d28d9",
-          800: "#5b21b6",
-          900: "#4c1d95"
-        }
+        // Semantic theme tokens. Values live in src/index.css (:root).
+        bg: token("bg"),
+        surface: token("surface"),
+        elevated: token("elevated"),
+        line: token("line"),
+        ink: token("ink"),
+        soft: token("soft"),
+        muted: token("muted"),
+        subtle: token("subtle"),
+        accent: {
+          DEFAULT: token("accent"),
+          strong: token("accent-strong"),
+          ink: token("accent-ink"),
+        },
       },
       fontFamily: {
-        display: ["DM Serif Display", "Georgia", "serif"],
-        body: ["Manrope", "system-ui", "-apple-system", "sans-serif"]
+        display: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        body: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 30px rgba(139, 92, 246, 0.25)",
-        card: "0 20px 60px rgba(0, 0, 0, 0.35)"
-      },
-      backgroundImage: {
-        'grid': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)"
-      },
-      backgroundSize: {
-        '300%': '300% 300%'
+        glow: "0 0 0 1px rgb(var(--accent) / 0.25), 0 12px 40px -12px rgb(var(--accent) / 0.35)",
+        card: "0 20px 60px rgba(0, 0, 0, 0.45)",
       },
       keyframes: {
-        'gradient-x': {
-          '0%, 100%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' }
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
-          '50%': { transform: 'translateY(-18px) translateX(10px)' }
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
         },
-        'fade-up': {
-          from: { opacity: '0', transform: 'translateY(24px)' },
-          to: { opacity: '1', transform: 'translateY(0)' }
-        }
       },
       animation: {
-        'gradient-x': 'gradient-x 6s ease infinite',
-        float: 'float 7s ease-in-out infinite',
-        'float-slow': 'float 11s ease-in-out infinite',
-        'fade-up': 'fade-up 0.7s ease-out forwards'
-      }
-    }
+        "fade-up": "fade-up 0.7s ease-out forwards",
+        blink: "blink 1.1s steps(1) infinite",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
